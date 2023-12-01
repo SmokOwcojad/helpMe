@@ -2,11 +2,6 @@
 	import '../app.pcss';
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
-	
-
-
-
-	
 </script>
 
 <AppShell>
@@ -29,11 +24,6 @@
 				<img src="man.png" alt="man" width="10%" slot="trail" />
 			</svelte:fragment>
 		</AppBar>
-	</svelte:fragment>
-	<svelte:fragment slot="footer">
-		
-	
-
 	</svelte:fragment>
 	<slot />
 </AppShell>
