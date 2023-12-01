@@ -11,13 +11,14 @@
 			slotDefault="place-self-center"
 			slotTrail="place-content-end"
 			slotEnd="place-content-end"
+			slotCenter="place-content-center"
 		>
 			<svelte:fragment slot="lead"
 				><img src="icon-rectangle-NoBg-rect.png" alt="icon" width="40%" /></svelte:fragment
 			>
 			<svelte:fragment slot="trail">
-				<LightSwitch slot="end" id="light" class=" mx-5" />
-				<button type="button" class="btn variant-filled" id="btn">
+				<LightSwitch slot="end" class=" mx-5" />
+				<button type="button" class="btn variant-filled rounded-full">
 					<img src="map.png" alt="mapa" class="w-20" />
 					Przejdź do mapy
 				</button>
@@ -25,21 +26,7 @@
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
+
 	<slot />
 </AppShell>
 
-<style>
-	/* a{
-	background-color: gray;
-	color: black;
-	padding: 5px;
-	border: 2px solid black;
- }
- a:hover{
-	color: lightgray;
- } */
-	#btn {
-		border-radius: 100px;
-		margin: 0%;
-	}
-</style>
