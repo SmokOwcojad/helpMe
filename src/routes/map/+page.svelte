@@ -13,7 +13,7 @@
 		loader.load().then(async () => {
 			const { Map } = (await google.maps.importLibrary('maps')) as google.maps.MapsLibrary;
 			map = new Map(mel, {
-				center: { lat: -34.397, lng: 150.644 },
+				center: { lat: 49.60964693872272, lng: 20.7039616596972 },
 				zoom: 8
 			});
 		});
