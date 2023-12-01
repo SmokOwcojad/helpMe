@@ -1,38 +1,17 @@
-# create-svelte
+HelpMe!
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+1) Co robi.
+2) Dlaczego jest potrzebna
+3) Jak ją zrobiono
+4) Posumowanie
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+1) Aplikacja HelpMe! Służy do zgłaszania przez osoby potrzebujące pomocy swojej lokalizacji aby ratonicy i wolontariusze za pomocą wbudowanej funkcji odnalezienia osoby mogli jej pomóc w możliwie jak najszybszym czasie. Aplikaca jest ostoją dla osób potrzebujących pomocy i nasza team deweloperski ma nadzieje na to że będzie w stanie ona przynieść tak bardzo potrzebną pomoc w tych trudnych, wymagających czasach. Aplikacja będzie dostępa dla każdej osoby, dziecka które ma urządzenie z dostępem do intenertu oraz nie jest częścią firmy apple.inc gdyż te osoby nie potrzebują pomocy dlatego aplikacja nie będzie ich obsługiwać. 
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+2) Aplikacja internetowa będzie rewolucyjnym sposobem na wysyłanie próźb o pomoc do służb gdyż będzie ona dokładnie pokazywała aktualną lokalizacje ofiary nieszczesliwego wypadku. Nieszcęśnik będzie w stanie w łatwy sposób zobaczyć aktualne położenie wolonratiuszy i innych służb niesiących pomoc.
+Służby za pomocą strony będą widzieć pineski oznaczające lokalizajce osób które wyzywaja bratniej dłoni. 
 
-## Developing
+3) ERROR 404
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+4) Aplicaja jest rewolucyjnym, nigdy nie widzianym sposobem na proszenie o pomoc, dzięki HelpMe! bedziemy w stanie pomóc milionom potrzebujących osób na całm świecie, nie tylko w krajach I świata.
