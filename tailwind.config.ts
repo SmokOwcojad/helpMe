@@ -20,8 +20,12 @@ const config = {
 		extend: {},
 	},
 	plugins: [
-		// 4. Append the Skeleton plugin (after other plugins)
-		skeleton({ themes: { preset: ["wintry", "gold-nouveau"] } })
+		skeleton({
+			themes: {
+				// Register each theme within this array:
+				preset: [ "skeleton", "modern", "crimson", "vintage" ] 
+			}
+		})
 	]
 } satisfies Config;
 

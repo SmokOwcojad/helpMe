@@ -1,3 +1,4 @@
+
 <script lang="ts">
 import { AppBar,AppShell } from '@skeletonlabs/skeleton';
 import { LightSwitch } from '@skeletonlabs/skeleton';
