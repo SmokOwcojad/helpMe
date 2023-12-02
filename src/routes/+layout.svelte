@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { auth } from '$lib/db';
+	import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 	import '../app.pcss';
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
@@ -21,7 +23,9 @@
 					<img src="map.png" alt="mapa" class="w-20" />
 					Przejdź do mapy
 				</button>
-				<img src="man.png" alt="man" width="10%" slot="trail" />
+				<button on:click={() => signInWithPopup(auth,new GoogleAuthProvider())} slot="trail">
+					<img src="man.png" alt="man" width="10%" />
+				</button>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
