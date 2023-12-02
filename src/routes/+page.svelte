@@ -22,7 +22,7 @@
 		</div>
 		<svelte:fragment slot="footer">
 			<div class="flex justify-center w-full">
-				<button type="button" class="btn variant-filled-surface rounded-full">Zarejejstruj się jako wolonatiusz/Register as a volontuguer</button>
+				<button type="button" class="btn variant-filled-surface rounded-full"><a href="/submitions">Zarejejstruj się jako wolonatiusz/Register as a volontuguer</a></button>
 			
             </div>
 		</svelte:fragment>
