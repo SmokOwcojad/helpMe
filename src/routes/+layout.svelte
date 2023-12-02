@@ -25,7 +25,9 @@
 					<img src="map.png" alt="mapa" class="w-20" />
 					Przejdź do mapy
 				</button>
-				<button on:click={() => signInWithPopup(auth, new GoogleAuthProvider())} >
+
+				<button on:click={() => signInWithPopup(auth, new GoogleAuthProvider())}>
+
 					<img src="man.png" alt="man" width="10%" />
 				</button>
 			</svelte:fragment>
