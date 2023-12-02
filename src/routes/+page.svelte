@@ -42,10 +42,13 @@
   
   <div class="bg-primary-100">
     <AppShell>
-      <svelte:fragment slot="sidebarLeft">
-        <div class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-300 mt-5">
-          <p class="text-white" id="helpCounter">Liczba ludzi, którym już pomogliśmy: {helpCount}</p>
+      <svelte:fragment slot="sidebarLeft" >
+        <div class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-600 mt-5 text-center rounded-xl">
+          <p class="text-white variant-ghost-primary p-6 font-extrabold" id="helpCounter ">Liczba ludzi, którym już pomogliśmy:<br><br>
+            <span class="text-6xl font-serif text-center">{helpCount}</span><hr class="!border-t-2" />
+
         </div>
+
       </svelte:fragment>
       <svelte:fragment slot="sidebarRight">
         <div class="card p-10 pb-40 pt-40 block justify-center items-center bg-surface-300 mt-10">
@@ -64,3 +67,4 @@
       </svelte:fragment>
     </AppShell>
   </div>
+
