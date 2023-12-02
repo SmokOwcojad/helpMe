@@ -13,3 +13,4 @@ HelpMe!
 7. ERROR 404
 
 8. Aplicaja jest rewolucyjnym, nigdy nie widzianym sposobem na proszenie o pomoc, dzięki HelpMe! bedziemy w stanie pomóc milionom potrzebujących osób na całm świecie, nie tylko w krajach I świata.
+
