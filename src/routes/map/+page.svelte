@@ -43,7 +43,7 @@
 					position: { lat: cord.latitude, lng: cord.longitude },
 					title: data['name']
 				});
-				marker.addListener('click', async (f: Event) => {
+				marker.addListener('click', async () => {
 					if (auth?.currentUser) {
 						const modal_logged: ModalSettings = {
 							type: 'confirm',
@@ -51,18 +51,21 @@
 							title: 'Please Confirm',
 							body: 'Are you sure you wish to proceed?',
 							async response(r) {
-								await deleteDoc(e.ref);
-								await addDoc(vol, { id: e.id, volunteer: auth.currentUser.uid });
+								if (r) {
+									await deleteDoc(e.ref);
+									await addDoc(vol, { id: e.id, volunteer: auth.currentUser.uid });
+									window.location.reload()
+								}
 							}
 						};
-						modalStore.trigger(modal_logged)
+						modalStore.trigger(modal_logged);
 					} else {
 						const modal_unlogged: ModalSettings = {
 							type: 'alert',
 							title: 'Unauthorized',
 							body: 'You need to be locked in'
 						};
-						modalStore.trigger(modal_unlogged)
+						modalStore.trigger(modal_unlogged);
 					}
 				});
 			});
