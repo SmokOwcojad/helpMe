@@ -30,9 +30,6 @@
 
 		// Ustaw nową wartość ciasteczka
 		setCookie('helpCount', helpCount.toString(), 365);
-
-		// Zaktualizuj widok
-		const counterElement = document.getElementById('helpCounter');
 	}
 </script>
 
@@ -40,7 +37,7 @@
 	<AppShell>
 		<svelte:fragment slot="sidebarLeft">
 			<div class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-400 mt-5">
-				<p class="text-white" id="helpCounter">Liczba ludzi, którym już pomogliśmy: {helpCount}</p>
+				<p class="text-white">Liczba ludzi, którym już pomogliśmy: {helpCount}</p>
 			</div>
 		</svelte:fragment>
 		<svelte:fragment slot="sidebarRight">
