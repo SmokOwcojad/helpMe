@@ -20,17 +20,21 @@
 				<a href="/"><img src="icon-rectangle-NoBg-rect.png" alt="icon" width="40%"/></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<LightSwitch slot="end" class="w-20 mx-5" />
-				<a href="/map"><button type="button" class="btn variant-filled rounded-full">
+				<LightSwitch slot="end" class="w-36 mx-5" />
+				
+				<a href="/map"><button type="button" class="btn variant-filled rounded-full w-60">
 					<img src="map.png" alt="mapa" class="w-20" />
 					Przejdź do mapy
-				</button>
+				</button></a>
 
 				<button on:click={() => signInWithPopup(auth, new GoogleAuthProvider())}>
-
-					<img src="man.png" alt="man" width="10%" />
+					<img src="man.png" alt="man" width="40%" />
 				</button>
+				
 			</svelte:fragment>
+
+			
+
 		</AppBar>
 	</svelte:fragment>
 
