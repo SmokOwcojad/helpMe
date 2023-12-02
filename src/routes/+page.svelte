@@ -87,8 +87,7 @@
 				<a href="/submitions"
 					><button type="button" class="btn variant-filled rounded-full w-80 h-20"
 						>Zostan wolontariuszem</button
-					></a
-				>
+					></a>
 			</div>
 		</svelte:fragment>
 	</AppShell>
