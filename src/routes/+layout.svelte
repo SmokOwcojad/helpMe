@@ -2,28 +2,37 @@
 	import '../app.pcss';
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
+
+	
+
+	
 </script>
 
 <AppShell>
 	<svelte:fragment slot="header">
+	
+
 		<AppBar
 			gridColumns="grid-cols-3"
 			slotDefault="place-self-center"
 			slotTrail="place-content-end"
 			slotEnd="place-content-end"
+			background = "bg-surface-300 dark:bg-surface-800"
+			
 		>
 			<svelte:fragment slot="lead"
 				><img src="icon-rectangle-NoBg-rect.png" alt="icon" width="40%" /></svelte:fragment
 			>
 			<svelte:fragment slot="trail">
-				<LightSwitch slot="end" id="light" class=" mx-5" />
+				<LightSwitch slot="end" id="light" class=" mx-5" bgDark="bg-surface-900" bgLight="bg-surface-400" />
 				<button type="button" class="btn variant-filled" id="btn">
 					<img src="map.png" alt="mapa" class="w-20" />
 					Przejdź do mapy
 				</button>
-				<img src="man.png" alt="man" width="10%" slot="trail" />
+				<img src="man.p	ng" alt="man" width="10%" slot="trail" />
 			</svelte:fragment>
 		</AppBar>
+
 	</svelte:fragment>
 	<slot />
 </AppShell>
