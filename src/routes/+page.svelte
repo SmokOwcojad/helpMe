@@ -2,43 +2,26 @@
 	import { onMount } from 'svelte';
 	import { AppShell } from '@skeletonlabs/skeleton';
 
-	import { addDoc, collection, GeoPoint } from 'firebase/firestore';
+	import { addDoc, collection, count, GeoPoint, getCountFromServer } from 'firebase/firestore';
 	import { db } from '$lib/db';
 	import { isSet } from 'util/types';
 
 	let helpCount = 0;
 
-	onMount(() => {
+	onMount(async () => {
 		// Pobierz wartość z ciasteczka, jeśli istnieje
-		const helpCountCookie = parseInt(getCookie('helpCount'), 10);
-		if (!isNaN(helpCountCookie)) {
-			helpCount = helpCountCookie;
-		}
+		const col = collection(db, 'vol');
+		const snap = await getCountFromServer(col);
+		helpCount = snap.data().count;
 	});
-
-	function getCookie(name: string) {
-		const value = `; ${document.cookie}`;
-		const parts = value.split(`; ${name}=`);
-		if (parts.length === 2) return parts.pop().split(';').shift();
-	}
-
-	function setCookie(name: string, value: string, days: number) {
-		const expires = new Date();
-		expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-		document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
-	}
 	let n: string;
 	function handleClick() {
-		// Zwiększ licznik
-		helpCount++;
-
-		// Ustaw nową wartość ciasteczka
-		setCookie('helpCount', helpCount.toString(), 365);
 		if (!navigator.geolocation) {
 			alert('er');
 			return;
 		}
 		const col = collection(db, '1');
+
 		const loc = navigator.geolocation.getCurrentPosition(async (e) => {
 			await addDoc(col, { cords: new GeoPoint(e.coords.latitude, e.coords.longitude), name: n });
 		},
@@ -48,18 +31,15 @@
     zdarzenie.value = "";
 }
 	
+
 </script>
-
-
 
 <div class="bg-surface-200 dark:bg-inherit">
 	<AppShell>
 		<svelte:fragment slot="sidebarLeft">
 
+
 			<div class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-300 mt-5">
-				
-
-
 
 				<p class="text-black dark:text-white variant-ghost-success p-6 font-extrabold rounded-2xl text-center" id="helpCounter ">
 					Liczba ludzi, którym już pomogliśmy:<br /><br />
@@ -88,6 +68,7 @@
 		
 		<div class="flex justify-content w-full h-full">
 
+
 			<img class="justify-center" src="icon-rectangle-NoBg.png" alt="logo" />
 		</div>
 		<svelte:fragment slot="pageFooter">
@@ -96,7 +77,13 @@
 				id="left"
 				style="text-align:center;"
 			>
-				<a href="/submitions"><button type="button" class="text-2xl btn variant-filled dark:text-white text-black rounded-full w-100 h-30 variant-ghost-secondary">Zostan wolontariuszem</button></a>
+				<a href="/submitions"
+					><button
+						type="button"
+						class="text-2xl btn variant-filled dark:text-white text-black rounded-full w-100 h-30 variant-ghost-secondary"
+						>Zostan wolontariuszem</button
+					></a
+				>
 			</div>
 		</svelte:fragment>
 	</AppShell>
