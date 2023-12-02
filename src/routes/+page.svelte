@@ -49,7 +49,7 @@
 
 
 
-<div class="bg-tertiary-300 dark:bg-inherit">
+<div class="bg-surface-200 dark:bg-inherit">
 	<AppShell>
 		<svelte:fragment slot="sidebarLeft">
 
@@ -57,7 +57,7 @@
 				<p class="text-black dark:text-white">Liczba ludzi, którym już pomogliśmy: {helpCount}</p>
 
 
-				<p class="text-white variant-ghost-primary p-6 font-extrabold" id="helpCounter ">
+				<p class="text-black dark:text-white variant-ghost-primary p-6 font-extrabold" id="helpCounter ">
 					Liczba ludzi, którym już pomogliśmy:<br /><br />
 					<span class="text-6xl font-serif text-center">{helpCount}</span>
 				</p>
@@ -67,12 +67,13 @@
 		</svelte:fragment>
 		<svelte:fragment slot="sidebarRight">
 			<div class="card p-10 pb-40 pt-40 block justify-center items-center bg-surface-300 mt-10">
-
+                <label for="zdarzenie" class="text-black dark:text-white">Nazwa zdarzenia</label>
+				<input type="text" bind:value={n} id="zdarzenie" class="text-black"/><br><br>
 				<button type="button" class="btn variant-filled-error p-10 text-black dark:text-white" on:click={handleClick}>
 
 					WEZWIJ POMOC!!!
 				</button>
-				<input type="text" bind:value={n} />
+                
 			</div>
 		</svelte:fragment>
 		<div class="flex justify-content w-full h-full">
