@@ -4,6 +4,7 @@
 
 	import { addDoc, collection, GeoPoint } from 'firebase/firestore';
 	import { db } from '$lib/db';
+
 	let helpCount = 0;
 
 	onMount(() => {
@@ -46,22 +47,29 @@
 	}
 </script>
 
-<div class="bg-primary-100">
+
+
+<div class="bg-tertiary-300 dark:bg-inherit">
 	<AppShell>
 		<svelte:fragment slot="sidebarLeft">
-			<div
-				class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-600 mt-5 text-center rounded-xl"
-			>
+
+			<div class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-300 mt-5">
+				<p class="text-black dark:text-white">Liczba ludzi, którym już pomogliśmy: {helpCount}</p>
+
+
 				<p class="text-white variant-ghost-primary p-6 font-extrabold" id="helpCounter ">
 					Liczba ludzi, którym już pomogliśmy:<br /><br />
 					<span class="text-6xl font-serif text-center">{helpCount}</span>
 				</p>
 				<hr class="!border-t-2" />
+
 			</div>
 		</svelte:fragment>
 		<svelte:fragment slot="sidebarRight">
 			<div class="card p-10 pb-40 pt-40 block justify-center items-center bg-surface-300 mt-10">
-				<button type="button" class="btn variant-filled-error p-10" on:click={handleClick}>
+
+				<button type="button" class="btn variant-filled-error p-10 text-black dark:text-white" on:click={handleClick}>
+
 					WEZWIJ POMOC!!!
 				</button>
 				<input type="text" bind:value={n} />
@@ -72,7 +80,7 @@
 		</div>
 		<svelte:fragment slot="footer">
 			<div
-				class="card text-white p-10 block justify-center items-center bg-surface-400 mt-5"
+				class="card text-black dark:text-white p-10 block justify-center items-center bg-surface-300 mt-5"
 				id="left"
 				style="text-align:center;"
 			>
