@@ -54,12 +54,12 @@
 		<svelte:fragment slot="sidebarLeft">
 
 			<div class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-300 mt-5">
-				<p class="text-black dark:text-white">Liczba ludzi, którym już pomogliśmy: {helpCount}</p>
+				
 
 
 				<p class="text-black dark:text-white variant-ghost-primary p-6 font-extrabold" id="helpCounter ">
 					Liczba ludzi, którym już pomogliśmy:<br /><br />
-					<span class="text-6xl font-serif text-center">{helpCount}</span>
+					<span class="text-5xl font-serif text-center">{helpCount}</span>
 				</p>
 				<hr class="!border-t-2" />
 
@@ -69,7 +69,7 @@
 			<div class="card p-10 pb-40 pt-40 block justify-center items-center bg-surface-300 mt-10">
                 <label for="zdarzenie" class="text-black dark:text-white">Nazwa zdarzenia</label>
 				<input type="text" bind:value={n} id="zdarzenie" class="text-black"/><br><br>
-				<button type="button" class="btn variant-filled-error p-10 text-black dark:text-white" on:click={handleClick}>
+				<button type="button" class="btn variant-filled-error p-10 text-black dark:text-white rounded-md" on:click={handleClick}>
 
 					WEZWIJ POMOC!!!
 				</button>
