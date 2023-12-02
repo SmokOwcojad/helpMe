@@ -2,6 +2,7 @@
 	import { PUBLIC_GMA } from '$env/static/public';
 	import { app, auth, db } from '$lib/db';
 	import { Loader } from '@googlemaps/js-api-loader';
+	import { Modal,getModalStore } from '@skeletonlabs/skeleton';
 	import { GeoPoint, addDoc, collection, deleteDoc, getDocs, query } from 'firebase/firestore';
 	import { onMount } from 'svelte';
 	let map: google.maps.Map;
@@ -48,3 +49,4 @@
 </script>
 
 <div bind:this={mel} class="h-screen"></div>
+<Modal ></Modal>
