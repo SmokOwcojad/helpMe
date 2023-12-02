@@ -4,6 +4,7 @@
 
 	import { addDoc, collection, GeoPoint } from 'firebase/firestore';
 	import { db } from '$lib/db';
+	import { isSet } from 'util/types';
 
 	let helpCount = 0;
 
@@ -44,7 +45,9 @@
     f=>{
       alert("err")
     });
-	}
+    zdarzenie.value = "";
+}
+	
 </script>
 
 
@@ -57,39 +60,43 @@
 				
 
 
-				<p class="text-black dark:text-white variant-ghost-primary p-6 font-extrabold" id="helpCounter ">
+
+				<p class="text-black dark:text-white variant-ghost-success p-6 font-extrabold rounded-2xl text-center" id="helpCounter ">
 					Liczba ludzi, którym już pomogliśmy:<br /><br />
+
 					<span class="text-5xl font-serif text-center">{helpCount}</span>
+
 				</p>
 				<hr class="!border-t-2" />
 
-			</div>
+                <br><br>
+                    <div class="text-center">
+               
+                    <!-- <label for="zdarzenie" class="text-black dark:text-white variant-ghost-error text-center text-4xl p-4">Nazwa zdarzenia</label><br> -->
+                    <input type="text" bind:value={n} id="zdarzenie" class="text-black dark:text-white p-5 variant-ghost-warning rounded-2xl" placeholder="Nazwa zdarzenia" name="zdarzenie"/><br><br>
+                    <button type="button" class="btn variant-filled variant-ghost-warning p-10 text-black dark:text-white rounded-2xl" on:click={handleClick}>
+                    
+                        WEZWIJ POMOC!!!
+                    </button>
+                    
+                </div>
+       
+                </div>
+            
 		</svelte:fragment>
-		<svelte:fragment slot="sidebarRight">
-			<div class="card p-10 pb-40 pt-40 block justify-center items-center bg-surface-300 mt-10">
-                <label for="zdarzenie" class="text-black dark:text-white">Nazwa zdarzenia</label>
-				<input type="text" bind:value={n} id="zdarzenie" class="text-black"/><br><br>
-				<button type="button" class="btn variant-filled-error p-10 text-black dark:text-white rounded-md" on:click={handleClick}>
 
-					WEZWIJ POMOC!!!
-				</button>
-                
-			</div>
-		</svelte:fragment>
+		
 		<div class="flex justify-content w-full h-full">
+
 			<img class="justify-center" src="icon-rectangle-NoBg.png" alt="logo" />
 		</div>
-		<svelte:fragment slot="footer">
+		<svelte:fragment slot="pageFooter">
 			<div
 				class="card text-black dark:text-white p-10 block justify-center items-center bg-surface-300 mt-5"
 				id="left"
 				style="text-align:center;"
 			>
-				<a href="/submitions"
-					><button type="button" class="btn variant-filled rounded-full w-80 h-20"
-						>Zostan wolontariuszem</button
-					></a
-				>
+				<a href="/submitions"><button type="button" class="text-2xl btn variant-filled dark:text-white text-black rounded-full w-100 h-30 variant-ghost-secondary">Zostan wolontariuszem</button></a>
 			</div>
 		</svelte:fragment>
 	</AppShell>
