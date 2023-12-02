@@ -39,7 +39,7 @@
 						}
 					}}
 				>
-					<img src={auth.currentUser?.photoURL || 'mad.jpg'} alt="man" width="10%" />
+					<img src={auth.currentUser?.photoURL || 'man.png'} alt="man" width="40%"/>
 				</button>
 			</svelte:fragment>
 		</AppBar>
