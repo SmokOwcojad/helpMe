@@ -20,7 +20,7 @@
 				<a href="/"><img src="icon-rectangle-NoBg-rect.png" alt="icon" width="40%"/></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<LightSwitch slot="end" class=" mx-5" />
+				<LightSwitch slot="end" class="w-20 mx-5" />
 				<a href="/map"><button type="button" class="btn variant-filled rounded-full">
 					<img src="map.png" alt="mapa" class="w-20" />
 					Przejdź do mapy
