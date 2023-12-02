@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { AppShell } from '@skeletonlabs/skeleton';
-	</script>
+</script>
 
 <div class="bg-tertiary-200 dark:bg-inherit"> 
 	<AppShell>
@@ -21,12 +21,10 @@
 			<img class="justify-center" src="icon-rectangle-NoBg.png" alt="logo" />
 		</div>
 		<svelte:fragment slot="footer">
-			<div
-				class="card text-black dark:text-white p-10 block justify-center items-center bg-surface-300 mt-5 text-lg"
-				id="left"
-			>
-				Footer
-			</div>
+
+			<div class="flex justify-center w-full">
+				<button type="button" class="btn variant-filled-surface rounded-full">Zarejejstruj się jako wolonatiusz/Register as a volontuguer</button>
+            </div>
 		</svelte:fragment>
 	</AppShell>
  </div> 
