@@ -2,7 +2,7 @@
 	import '../app.pcss';
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
-	import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+	import { signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
 	import { auth } from '$lib/db';
 	import { initializeStores } from '@skeletonlabs/skeleton';
 
@@ -23,23 +23,25 @@
 				<a href="/"><img src="icon-rectangle-NoBg-rect.png" alt="icon" width="40%" /></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-
 				<LightSwitch slot="end" class="w-36 mx-5" />
-				
-				<a href="/map"><button type="button" class="btn variant-filled rounded-full w-60">
-					<img src="map.png" alt="mapa" class="w-20" />
-					Przejdź do mapy
-				</button></a>
-
-				<button on:click={() => signInWithPopup(auth, new GoogleAuthProvider())}>
-					<img src="man.png" alt="man" width="40%" />
+				<a href="/map"
+					><button type="button" class="btn variant-filled rounded-full w-60">
+						<img src="map.png" alt="mapa" class="w-20" />
+						Przejdź do mapy
+					</button></a
+				>
+				<button
+					on:click={async () => {
+						if (auth.currentUser) {
+							await signOut(auth);
+						} else {
+							await signInWithPopup(auth, new GoogleAuthProvider());
+						}
+					}}
+				>
+					<img src={auth.currentUser?.photoURL || 'mad.jpg'} alt="man" width="10%" />
 				</button>
-				
 			</svelte:fragment>
-
-			
-
-
 		</AppBar>
 	</svelte:fragment>
 
