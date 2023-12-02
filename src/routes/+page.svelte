@@ -58,8 +58,8 @@
         <img class="justify-center" src="icon-rectangle-NoBg.png" alt="logo" />
       </div>
       <svelte:fragment slot="footer">
-        <div class="card text-white p-10 block justify-center items-center bg-surface-400 mt-5" id="left">
-          Footer
+        <div class="card text-white p-10 block justify-center items-center bg-surface-400 mt-5" id="left" style="text-align:center;">
+          <a href="/submitions"><button type="button" class="btn variant-filled rounded-full w-80 h-20">Zostan wolontariuszem</button></a>
         </div>
       </svelte:fragment>
     </AppShell>
