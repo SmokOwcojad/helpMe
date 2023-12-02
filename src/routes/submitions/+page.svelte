@@ -16,7 +16,6 @@ const modalStore = getModalStore();
 	body: 'Teraz masz szansze na zostanie wolontariuszem.',
 	image: 'ok.jpg',
 };
-modalStore.trigger(modal);
 </script>
 <Modal/>
 <AppShell>
