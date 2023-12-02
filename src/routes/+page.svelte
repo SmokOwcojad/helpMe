@@ -43,12 +43,12 @@
   <div class="bg-primary-100">
     <AppShell>
       <svelte:fragment slot="sidebarLeft">
-        <div class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-400 mt-5">
+        <div class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-300 mt-5">
           <p class="text-white" id="helpCounter">Liczba ludzi, którym już pomogliśmy: {helpCount}</p>
         </div>
       </svelte:fragment>
       <svelte:fragment slot="sidebarRight">
-        <div class="card p-10 pb-40 pt-40 block justify-center items-center bg-surface-400 mt-10">
+        <div class="card p-10 pb-40 pt-40 block justify-center items-center bg-surface-300 mt-10">
           <button type="button" class="btn variant-filled-error p-10" on:click={handleClick}>
             WEZWIJ POMOC!!!
           </button>
@@ -58,7 +58,7 @@
         <img class="justify-center" src="icon-rectangle-NoBg.png" alt="logo" />
       </div>
       <svelte:fragment slot="footer">
-        <div class="card text-white p-10 block justify-center items-center bg-surface-400 mt-5" id="left">
+        <div class="card text-white p-10 block justify-center items-center bg-surface-300 mt-5" id="left">
           Footer
         </div>
       </svelte:fragment>
