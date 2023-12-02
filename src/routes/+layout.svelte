@@ -29,4 +29,4 @@
 	</svelte:fragment>
 
 	<slot />
-</AppShell>
+</AppShell>	
