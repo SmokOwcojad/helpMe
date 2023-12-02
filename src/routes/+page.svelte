@@ -13,13 +13,13 @@
       }
     });
   
-    function getCookie(name) {
+    function getCookie(name:string) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
       if (parts.length === 2) return parts.pop().split(';').shift();
     }
   
-    function setCookie(name, value, days) {
+    function setCookie(name:string, value:string, days:number) {
       const expires = new Date();
       expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
       document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
@@ -30,7 +30,7 @@
       helpCount++;
   
       // Ustaw nową wartość ciasteczka
-      setCookie('helpCount', helpCount, 365);
+      setCookie('helpCount', helpCount.toString(), 365);
   
       // Zaktualizuj widok
       const counterElement = document.getElementById('helpCounter');
@@ -46,11 +46,12 @@
         <div class="card p-10 pb-60 pt-60 block justify-center items-center bg-surface-600 mt-5 text-center rounded-xl">
           <p class="text-white variant-ghost-primary p-6 font-extrabold" id="helpCounter ">Liczba ludzi, którym już pomogliśmy:<br><br>
             <span class="text-6xl font-serif text-center">{helpCount}</span><hr class="!border-t-2" />
+
         </div>
 
       </svelte:fragment>
       <svelte:fragment slot="sidebarRight">
-        <div class="card p-10 pb-40 pt-40 block justify-center items-center bg-surface-400 mt-10">
+        <div class="card p-10 pb-40 pt-40 block justify-center items-center bg-surface-300 mt-10">
           <button type="button" class="btn variant-filled-error p-10" on:click={handleClick}>
             WEZWIJ POMOC!!!
           </button>
