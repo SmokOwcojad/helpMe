@@ -1,4 +1,5 @@
 <script lang="ts">
+
     import { onMount } from 'svelte';
     import { AppShell } from '@skeletonlabs/skeleton';
   
@@ -63,4 +64,3 @@
       </svelte:fragment>
     </AppShell>
   </div>
-  
