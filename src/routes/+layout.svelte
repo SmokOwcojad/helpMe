@@ -13,9 +13,7 @@
 			slotDefault="place-self-center"
 			slotTrail="place-content-end"
 			slotEnd="place-content-end"
-
 			background="bg-surface-300 dark:bg-surface-800"
-
 			slotCenter="place-content-center"
 		>
 			<svelte:fragment slot="lead">
@@ -29,14 +27,12 @@
 				</button>
 
 				<button on:click={() => signInWithPopup(auth, new GoogleAuthProvider())}>
+
 					<img src="man.png" alt="man" width="10%" />
 				</button>
-
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
 
-	
-	<slot />
-</AppShell>	
-
+	<slot/>
+</AppShell>

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { AppShell } from '@skeletonlabs/skeleton';
+
 	import { addDoc, collection, GeoPoint } from 'firebase/firestore';
 	import { db } from '$lib/db';
-
 	let helpCount = 0;
 
 	onMount(() => {
