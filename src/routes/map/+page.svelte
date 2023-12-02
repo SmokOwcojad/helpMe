@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { PUBLIC_GMA } from '$env/static/public';
-	import { db } from '$lib/db';
+	import { app, auth, db } from '$lib/db';
 	import { Loader } from '@googlemaps/js-api-loader';
-	import { GeoPoint, collection, getDocs, query } from 'firebase/firestore';
+	import { GeoPoint, addDoc, collection, deleteDoc, getDocs, query } from 'firebase/firestore';
 	import { onMount } from 'svelte';
 	let map: google.maps.Map;
 	let mel: HTMLElement;
@@ -21,19 +21,26 @@
 			map = new Map(mel, {
 				center: { lat: 49.60964693872272, lng: 20.7039616596972 },
 				zoom: 16,
-				mapId:"map_id"
+				mapId: 'map_id'
 			});
 			const coll = collection(db, '1');
+			const vol = collection(db, 'vol');
 			const docs = await getDocs(query(coll));
 			docs.forEach((e) => {
-				const cord: GeoPoint = e.data()['cords'];
-				const txt=document.createElement("p")
-				txt.innerHTML="test"
+				const data = e.data();
+				const cord: GeoPoint = data['cords'];
+				const txt = document.createElement('p');
+				txt.innerHTML = 'test';
 				const marker = new AdvancedMarkerElement({
 					map,
 					position: { lat: cord.latitude, lng: cord.longitude },
-					title:"utopienie",
-					//content:txt
+					title: data['name']
+				});
+				marker.addListener('click', async (f: Event) => {
+					if (auth.currentUser) {
+						await deleteDoc(e.ref);
+						await addDoc(vol, { id: e.id, volunteer: auth.currentUser.uid });
+					}
 				});
 			});
 		});
